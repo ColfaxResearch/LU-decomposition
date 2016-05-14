@@ -1,0 +1,33 @@
+   LU Decomposition with Optimization for the Intel MIC Architecture
+   Copyright 2015, Colfax International
+
+   Author:  andrey@colfax-intl.com  Andrey Vladimirov
+            phi@colfax-intl.com     General inquiries
+
+
+DESCRIPTION: The code in this archive supplements the publication
+	     "Fine-Tuning Vectorization and Memory Traffic
+              on Intel Xeon Phi Coprocessors:	
+              LU Decomposition of Small Matrices"
+             (A. Vladimirov, 2015 -- Colfax Research 
+              http://colfaxresearch.com/fine-tuning-vectorization-and-memory-traffic-on-intel-xeon-phi-coprocessors-lu-decomposition-of-small-matrices/ )
+
+	     Directories step-00/ through step-05/ contain
+             the LU decomposition code at different stages of optimization,
+             with step-05/ being the most optimized.
+             Directory step-mkl/ contains the code used for Intel MKL benchmarks.
+
+REQUIREMENTS:
+  - Intel C++ compiler version 15.0.1.133 or greater;
+  - Multi-core processor based on Intel architecture;
+  - 8 GB of RAM or more;
+  - An Intel Xeon Phi coprocessor with passwordless SSH 
+    authentication configured
+  - Linux operating system in order to use the included
+    Makefile and benchmark script.
+
+EXAMPLES OF USAGE:
+  - To compile the code in one of the steps, run "make"
+  - To execute the code on the CPU, run "make run-cpu"
+  - To execute the code on the coprocessor, run "make run-mic"
+

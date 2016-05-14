@@ -13,6 +13,7 @@ void LU_decomp(const int n, float* const A) {
     const float recAbb = 1.0f/A[b*n + b];
     for (int i = b+1; i < n; i++) {
       A[i*n + b] = A[i*n + b]*recAbb;
+#pragma simd
       for (int j = b+1; j < n; j++) 
 	A[i*n + j] -= A[i*n + b]*A[b*n + j];
     }

@@ -28,6 +28,7 @@ void LU_decomp(const int n,
     for (int i = b+1; i < n; i++) {
       L[i*n + b] = A[i*n + b]*recAbb;
       // Regularized patern of vector loop:
+#pragma simd
       for (int j = jMin; j < n; j++) 
 	A[i*n + j] -= L[i*n+b]*A[b*n + j];
     }

@@ -29,6 +29,7 @@ void LU_decomp(const int n,
       L[i*n + b] = A[i*n + b]*recAbb;
       // Aligned data hint:
 #pragma vector aligned
+#pragma simd
       // Regularized patern of vector loop:
       for (int j = jMin; j < n; j++) 
 	A[i*n + j] -= L[i*n+b]*A[b*n + j];

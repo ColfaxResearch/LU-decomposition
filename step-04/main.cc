@@ -32,6 +32,7 @@ void LU_decomp(const int n,
       // Pointer disambiguation:
 #pragma ivdep
       // Regularized patern of vector loop:
+#pragma simd
       for (int j = jMin; j < n; j++) 
 	A[i*n + j] -= L[i*n+b]*A[b*n + j];
     }
